@@ -11,13 +11,10 @@ void pall(stack_t **head, unsigned int count)
 {
 	stack_t *ptr;
 	(void)count;
-
 	ptr = *head;
-	if (ptr == NULL)
-		return;
-	while (ptr)
+
+	for (; ptr != NULL; ptr = ptr->next)
 	{
-		printf("%d\n", ptr->n);
-		ptr = ptr->next;
+	printf("%d\n", ptr->n);
 	}
 }

@@ -14,11 +14,17 @@ void push(stack_t **top, unsigned int index)
 	{
 		if (bus.arg[0] == '-')
 			j++;
-		for (; bus.arg[j] != '\0'; j++)
+		j = 0;
+		while (bus.arg[j] != '\0')
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
+    			{
 				flag = 1;
+				break;
+			}
+			j++;
 		}
+
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", index);
