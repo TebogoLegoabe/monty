@@ -1,42 +1,42 @@
 #include "monty.h"
 
-void monty_pint(stack_t **stack, unsigned int line_number);
-void monty_pop(stack_t **stack, unsigned int line_number);
-
 /**
- * monty_pint - Prints the top value of a stack_t
- * @stack: A pointer to the top mode node of a stack_t
- * @line_number: The current working line number
- */
-void monty_pint(stack_t **stack, unsigned int line_number)
+ * pop - removes the top element of the stack
+ * @head: stack head
+ * @count: counter
+ * Return: void
+*/
+void pop(stack_t **head, unsigned int count)
 {
-	if ((*stack)->next == NULL)
-	{
-		set_op_tok_error(pint_error(line_number));
-		return;
-	}
+	stack_t *h;
 
-	printf("%d\n", (*stack)->next->n);
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", count);
+		fclose(bus.file);
+		free(bus.content);
+		_free(*head);
+		exit(EXIT_FAILURE);
+	}
+	h = *head;
+	*head = h->next;
+	free(h);
 }
-
 /**
- * monty_pop - Removes the top value element of a stack_t
- * @stack: A pointer to the top mode node of a stack_t
- * @line_number: The current working line number
- */
-void monty_pop(stack_t **stack, unsigned int line_number)
+ * pint -  prints the value at the top of the stack, followed by a new line
+ * @head: stack head
+ * @count: counter
+ * Return: void
+*/
+void pint(stack_t **head, unsigned int count)
 {
-	stack_t *next = NULL;
-
-	if ((*stack)->next == NULL)
+	if (*head == NULL)
 	{
-		set_op_tok_error(pop_error(line_number));
-		return;
+		fprintf(stderr, "L%u: can't pint, stack empty\n", count);
+		fclose(bus.file);
+		free(bus.content);
+		_free(*head);
+		exit(EXIT_FAILURE);
 	}
-
-	next = (*stack)->next->next;
-	free((*stack)->next);
-	if (next)
-		next->prev = *stack;
-	(*stack)->next = next;
+	printf("%d\n", (*head)->n);
 }
