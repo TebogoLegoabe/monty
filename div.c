@@ -19,8 +19,8 @@ void divide(stack_t **head, unsigned int count)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", count);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(output.file);
+		free(output.content);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -28,8 +28,8 @@ void divide(stack_t **head, unsigned int count)
 	if (ptr->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", count);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(output.file);
+		free(output.content);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}

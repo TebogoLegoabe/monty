@@ -10,14 +10,14 @@ void push(stack_t **top, unsigned int index)
 {
 	int i, j = 0, flag = 0;
 
-	if (bus.arg)
+	if (output.arg)
 	{
-		if (bus.arg[0] == '-')
+		if (output.arg[0] == '-')
 			j++;
 		j = 0;
-		while (bus.arg[j] != '\0')
+		while (output.arg[j] != '\0')
 		{
-			if (bus.arg[j] > 57 || bus.arg[j] < 48)
+			if (output.arg[j] > 57 || output.arg[j] < 48)
     			{
 				flag = 1;
 				break;
@@ -28,19 +28,19 @@ void push(stack_t **top, unsigned int index)
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", index);
-			fclose(bus.file);
-			free(bus.content);
+			fclose(output.file);
+			free(output.content);
 			_free(*top);
 			exit(EXIT_FAILURE); }}
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", index);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(output.file);
+		free(output.content);
 		_free(*top);
 		exit(EXIT_FAILURE); }
-	i = atoi(bus.arg);
-	if (bus.num == 0)
+	i = atoi(output.arg);
+	if (output.num == 0)
 		addnode(top, i);
 	else
 	addqueue(top, i);
