@@ -3,12 +3,12 @@
 /**
 * execute - executes the opcode
 * @stack: head
-* @counter: counter
+* @count: counter
 * @file: poiner to monty file
-* @content: line content
+* @content: command line
 * Return: void
 */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 {
 	instruction_t opst[] = {
 	{OP_PUSH, push}, {OP_PALL, pall}, {OP_PINT, pint},
@@ -26,16 +26,19 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	if (ptr && ptr[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (opst[i].opcode && ptr)
+	while (opst[i].opcode != NULL && ptr != NULL)
 	{
-		if (strcmp(ptr, opst[i].opcode) == 0)
-		{	opst[i].f(stack, counter);
-			return (0);
-		}
-		i++;
+		if (!strcmp(ptr, opst[i].opcode))
+	{
+		opst[i].f(stack, count);
+		return 0;
 	}
+	i++;
+	}
+
 	if (ptr && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, ptr);
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, ptr);
 		fclose(file);
 		free(content);
 		_free(*stack);
