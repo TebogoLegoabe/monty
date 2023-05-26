@@ -21,7 +21,7 @@ void mod(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", count);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -30,7 +30,7 @@ void mod(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%d: division by zero\n", count);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -29,7 +29,7 @@ void push(stack_t **top, unsigned int index)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", index);
 			fclose(output.file);
-			free(output.content);
+			free(output.character);
 			_free(*top);
 			exit(EXIT_FAILURE);
 		}
@@ -38,7 +38,7 @@ void push(stack_t **top, unsigned int index)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", index);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*top);
 		exit(EXIT_FAILURE); }
 	n = atoi(output.arg);

@@ -21,10 +21,10 @@ void divide(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -33,10 +33,10 @@ void divide(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}

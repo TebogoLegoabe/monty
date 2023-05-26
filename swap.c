@@ -22,7 +22,7 @@ void swap(stack_t **head, unsigned int number)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", number);
 		fclose(output.file);
-		free(output.content);
+		free(output.character);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}

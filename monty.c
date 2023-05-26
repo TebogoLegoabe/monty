@@ -11,7 +11,7 @@ _stack_t output = {NULL, NULL, NULL, 0};
  */
 int main(int argc, char *argv[])
 {
-	char content[MAX_LINE_LENGTH];
+	char strchar[MAX_LINE_LENGTH];
 	FILE *file;
 	size_t len;
 	stack_t *stack = NULL;
@@ -33,16 +33,16 @@ int main(int argc, char *argv[])
 	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 	}
-	while (fgets(content, MAX_LINE_LENGTH, file) != NULL)
+	while (fgets(strchar, MAX_LINE_LENGTH, file) != NULL)
 	{
 	count++;
-	len = strlen(content);
+	len = strlen(strchar);
 
-	if (len > 0 && content[len - 1] == '\n')
-		content[len - 1] = '\0';
+	if (len > 0 && strchar[len - 1] == '\n')
+		strchar[len - 1] = '\0';
 
-	output.content = content;
-	execute(content, &stack, count, file);
+	output.character = strchar;
+	execute(strchar, &stack, count, file);
 	}
 	_free(stack);
 	fclose(file);

@@ -57,7 +57,7 @@ typedef struct stack_ss
 {
 	char *arg;
 	FILE *file;
-	char *content;
+	char *character;
 	int num;
 } _stack_t;
 
