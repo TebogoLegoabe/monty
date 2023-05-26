@@ -3,8 +3,8 @@
 /**
  * swap - swaps the top two elements
  * of the stack
- * @head: stack head
- * @number: int count
+ * @head: top of the stack
+ * @number: counter
  * Return: void
 */
 void swap(stack_t **head, unsigned int number)
