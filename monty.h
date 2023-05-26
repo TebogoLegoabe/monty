@@ -1,4 +1,4 @@
-#ifndef MONTY_iH
+#ifndef MONTY_H
 #define MONTY_H
 
 #include <stdio.h>
