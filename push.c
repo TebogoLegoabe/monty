@@ -18,7 +18,7 @@ void push(stack_t **top, unsigned int index)
 		while (bus.arg[j] != '\0')
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
-    			{
+			{
 				flag = 1;
 				break;
 			}

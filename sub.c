@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
-  *sub -  subtracts the top element of the stack
-  from the second top element of the stack
-  *@head: stack head
-  *@count: counter
-  *Return: void
+ * sub -  subtracts the top element of the stack
+ * from the second top element of the stack
+ * @head: stack head
+ * @count: counter
+ * Return: void
  */
 void sub(stack_t **head, unsigned int count)
 {
