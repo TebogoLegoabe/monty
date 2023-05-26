@@ -14,17 +14,26 @@ void push(stack_t **top, unsigned int index)
 	{
 		if (output.arg[0] == '-')
 			j++;
-		for (; output.arg[j] != '\0'; j++)
+		j = 0;
+	while (output.arg[j] != '\0')
+	{
+    		if (output.arg[j] > 57 || output.arg[j] < 48)
 		{
-			if (output.arg[j] > 57 || output.arg[j] < 48)
-				flag = 1; }
+			flag = 1;
+			break;
+		}
+			j++;
+	}
+
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", index);
 			fclose(output.file);
 			free(output.content);
 			_free(*top);
-			exit(EXIT_FAILURE); }}
+			exit(EXIT_FAILURE);
+		}
+	}
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", index);
