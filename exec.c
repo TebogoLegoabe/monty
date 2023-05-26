@@ -31,7 +31,7 @@ int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 		if (!strcmp(ptr, opst[i].opcode))
 	{
 		opst[i].f(stack, count);
-		return 0;
+		return (0);
 	}
 	i++;
 	}

@@ -17,7 +17,7 @@ void push(stack_t **top, unsigned int index)
 		j = 0;
 	while (output.arg[j] != '\0')
 	{
-    		if (output.arg[j] > 57 || output.arg[j] < 48)
+		if (output.arg[j] > 57 || output.arg[j] < 48)
 		{
 			flag = 1;
 			break;
