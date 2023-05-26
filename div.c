@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
  * divide - divides the top two elements of the stack.
  * @head: stack head
- * @count: counter
+ * @line_number: counter
  * Return: void
 */
-void divide(stack_t **head, unsigned int count)
+void divide(stack_t **head, unsigned int line_number)
 {
 	stack_t *ptr;
 	int len = 0, i;
@@ -18,7 +19,7 @@ void divide(stack_t **head, unsigned int count)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", count);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		fclose(bus.file);
 		free(bus.content);
 		_free(*head);
@@ -27,7 +28,7 @@ void divide(stack_t **head, unsigned int count)
 	ptr = *head;
 	if (ptr->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", count);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(bus.file);
 		free(bus.content);
 		_free(*head);

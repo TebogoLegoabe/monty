@@ -93,7 +93,7 @@ void swap(stack_t **head, unsigned int number);
 void add(stack_t **head, unsigned int count);
 void nop(stack_t **head, unsigned int null);
 void sub(stack_t **head, unsigned int count);
-void divide(stack_t **head, unsigned int count);
+void divide(stack_t **head, unsigned int line_number);
 void mul(stack_t **head, unsigned int count);
 void mod(stack_t **head, unsigned int count);
 void _char(stack_t **head, unsigned int counter);
