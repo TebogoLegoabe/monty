@@ -25,7 +25,7 @@ int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 	ptr = strtok(content, " \n\t");
 	if (ptr && ptr[0] == '#')
 		return (0);
-	bus.arg = strtok(NULL, " \n\t");
+	output.arg = strtok(NULL, " \n\t");
 	while (opst[i].opcode != NULL && ptr != NULL)
 	{
 		if (!strcmp(ptr, opst[i].opcode))

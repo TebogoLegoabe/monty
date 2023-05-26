@@ -13,8 +13,8 @@ void pop(stack_t **head, unsigned int count)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", count);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(output.file);
+		free(output.content);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}
@@ -33,8 +33,8 @@ void pint(stack_t **head, unsigned int count)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", count);
-		fclose(bus.file);
-		free(bus.content);
+		fclose(output.file);
+		free(output.content);
 		_free(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -10,7 +10,7 @@ void queue(stack_t **head, unsigned int count)
 {
 	(void)head;
 	(void)count;
-	bus.num = 1;
+	output.num = 1;
 }
 
 /**

@@ -10,7 +10,7 @@ void _stack(stack_t **head, unsigned int count)
 {
 	(void)head;
 	(void)count;
-	bus.num = 0;
+	output.num = 0;
 }
 /**
  * _str - prints the string starting at the top of the stack,
